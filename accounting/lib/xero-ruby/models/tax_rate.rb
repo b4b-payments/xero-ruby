@@ -212,7 +212,7 @@ module XeroRuby
     def report_tax_type=(report_tax_type)
       validator = EnumAttributeValidator.new('String', ["OUTPUT", "INPUT", "EXEMPTOUTPUT", "INPUTTAXED", "BASEXCLUDED", "EXEMPTEXPENSES", "EXEMPTINPUT", "ECOUTPUT", "ECOUTPUTSERVICES", "ECINPUT", "ECACQUISITIONS", "CAPITALSALESOUTPUT", "CAPITALEXPENSESINPUT", "MOSSSALES", "NONE", "GSTONIMPORTS", "AVALARA"])
       unless validator.valid?(report_tax_type)
-        fail ArgumentError, "invalid value for \"report_tax_type\", must be one of #{validator.allowable_values}."
+        warn ArgumentError, "invalid value for \"report_tax_type\", must be one of #{validator.allowable_values}."
       end
       @report_tax_type = report_tax_type
     end
