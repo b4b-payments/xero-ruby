@@ -200,7 +200,7 @@ module XeroRuby
     # Custom attribute writer method checking allowed values (enum).
     # @param [Object] status Object to be assigned
     def status=(status)
-      validator = EnumAttributeValidator.new('String', ["ACTIVE", "DELETED", "ARCHIVED"])
+      validator = EnumAttributeValidator.new('String', ["ACTIVE", "DELETED", "ARCHIVED", "PENDING"])
       unless validator.valid?(status)
         fail ArgumentError, "invalid value for \"status\", must be one of #{validator.allowable_values}."
       end
